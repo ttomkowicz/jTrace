@@ -3,13 +3,15 @@ package com.jtrace;
 public class Sphere extends Object3d{
 
     //  == POLA ==
+    private Vec3 center;
     private double radius;
     private double radSqr;
 
 
     //  == KONSTRUKTORY ==
     public Sphere(Vec3 center, double radius, Vec3 dColor, double reflect){
-        super(center, dColor, reflect);
+        super(dColor, reflect);
+        this.center = center;
         this.radius = radius;
         radSqr = radius * radius;
     }
@@ -17,10 +19,10 @@ public class Sphere extends Object3d{
 
     //  == GET / SET ==
     public Vec3 getCenter() {
-        return super.getCenter();
+        return center;
     }
     public void setCenter(Vec3 center) {
-        super.setCenter(center);
+        this.center = center;
     }
     public double getRadius() {
         return radius;
